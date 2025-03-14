@@ -3,6 +3,8 @@ import 'package:todo_app/util/button_util.dart';
 
 class DialogBox extends StatelessWidget {
   final TextEditingController controller;
+  final String hintName;
+  final bool isEdit;
   final VoidCallback onSave;
   final VoidCallback onCancel;
 
@@ -11,6 +13,8 @@ class DialogBox extends StatelessWidget {
     required this.controller,
     required this.onSave,
     required this.onCancel,
+    required this.hintName,
+    required this.isEdit
   });
 
   @override
@@ -25,7 +29,7 @@ class DialogBox extends StatelessWidget {
               controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "Add new task",
+                hintText: isEdit ? hintName : "Add new task",
               ),
             ), //user input
 
@@ -33,6 +37,7 @@ class DialogBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ButtonUtil(text: "Save", onPressed: onSave),
+                
                 ButtonUtil(text: "Cancel", onPressed: onCancel),
               ],
             ),

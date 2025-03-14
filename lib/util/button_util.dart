@@ -5,7 +5,7 @@ class ButtonUtil extends StatelessWidget {
   final String text;
   VoidCallback onPressed;
 
-   ButtonUtil({super.key, required this.text, required this.onPressed});
+  ButtonUtil({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
